@@ -17,7 +17,7 @@ const UpdateBookDialog = ({ open, onClose, onSave, book }) => {
     }
   }, [book]);
   const handleSave = () => {
-    onSave({ ...book, name, price, category });
+    onSave({ ...book, name, price, category, description });
     onClose();
   };
 
@@ -56,7 +56,7 @@ const UpdateBookDialog = ({ open, onClose, onSave, book }) => {
       <TextField
         label="Description"
         value={description}
-        onChange={(e) => setCategory(e.target.value)}
+        onChange={(e) => setDescription(e.target.value)}
         fullWidth
         margin="normal"
       />
