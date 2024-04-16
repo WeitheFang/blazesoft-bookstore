@@ -11,11 +11,12 @@ const UpdateBookDialog = ({ open, onClose, onSave, book }) => {
   useEffect(() => {
     if (book) {
       setName(book.name);
-      setPrice(book.price);
+      setPrice(parseFloat(book.price).toFixed(2));
       setCategory(book.category);
       setDescription(book.description);
     }
   }, [book]);
+
   const handleSave = () => {
     onSave({ ...book, name, price, category, description });
     onClose();

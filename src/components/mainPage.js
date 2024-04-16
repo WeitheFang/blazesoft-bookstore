@@ -100,7 +100,7 @@ const MainPage = () => {
                   {book.name}
                 </Button>
               </TableCell>
-              <TableCell>${book.price}</TableCell>
+              <TableCell>${parseFloat(book.price).toFixed(2)}</TableCell>
               <TableCell>{book.category}</TableCell>
               <TableCell>
                 <Button onClick={() => handleIsDeleteOpen(book.id)}>

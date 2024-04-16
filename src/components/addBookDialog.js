@@ -10,6 +10,18 @@ const AddBookDialog = ({ open, onClose, onSave }) => {
 
   const handleSave = () => {
     onSave({ name, price, category, description });
+    setName("");
+    setPrice("");
+    setCategory("");
+    setDescription("");
+    onClose();
+  };
+
+  const handleCancel = () => {
+    setName("");
+    setPrice("");
+    setCategory("");
+    setDescription("");
     onClose();
   };
 
@@ -19,7 +31,7 @@ const AddBookDialog = ({ open, onClose, onSave }) => {
       handleClose={onClose}
       title="Add New Book"
       actions={[
-        { text: "Cancel", onClick: onClose },
+        { text: "Cancel", onClick: handleCancel },
         { text: "Save", onClick: handleSave, color: "primary" },
       ]}
     >
